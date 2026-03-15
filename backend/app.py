@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request,render_template
 from flask_cors import CORS
 import pandas as pd
 import numpy as np
@@ -8,6 +8,9 @@ import joblib
 
 app = Flask(__name__)
 CORS(app) # Allows frontend to communicate with backend
+@app.route('/')
+def home():
+    return render_template("index.html")
 
 # 1. Load the exported assets from Colab
 print("Loading NNDL Model & Data...")
