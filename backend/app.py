@@ -1,3 +1,6 @@
+import os
+os.environ["TF_USE_LEGACY_KERAS"] = "1"
+
 from flask import Flask, jsonify, request,render_template
 from flask_cors import CORS
 import pandas as pd
