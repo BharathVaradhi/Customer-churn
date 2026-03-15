@@ -14,7 +14,7 @@ def home():
 
 # 1. Load the exported assets from Colab
 print("Loading NNDL Model & Data...")
-model = tf.keras.models.load_model('nndl_churn_model.h5')
+model = tf.keras.models.load_model('nndl_churn_model.h5', compile=False)
 scaler = joblib.load('scaler.pkl')
 feature_cols = joblib.load('model_features.pkl')
 df = pd.read_csv('bank_customers_data.csv')
